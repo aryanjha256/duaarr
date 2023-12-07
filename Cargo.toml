@@ -3,6 +3,3 @@ name = "duaarr"
 description = "a Disk Usage Analyzer by Aryan in Rust."
 version = "0.1.0"
 edition = "2021"
-
-[dependencies]
-rustyline = "13.0.0"
