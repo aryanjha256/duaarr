@@ -1,3 +1,4 @@
+use crate::libs::dir_size;
 use std::fs;
 
 pub fn list_files() {
@@ -14,10 +15,12 @@ pub fn list_files() {
                                 metadata.len(),
                             );
                         } else if metadata.is_dir() {
+                            let dir_size = dir_size::calculate_directory_size(&entry.path());
+
                             println!(
                                 "Directory: {} ({} bytes)",
                                 entry.file_name().to_string_lossy(),
-                                metadata.len()
+                                dir_size
                             );
                         } else {
                             println!(
