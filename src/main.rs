@@ -1,3 +1,8 @@
+mod list;
+mod user_input;
+
 fn main() {
-    println!("Hello, world!");
+    while user_input::handle_user_input() {
+        list::list_files();
+    }
 }
